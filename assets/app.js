@@ -439,11 +439,11 @@
           var px = x * gap, py = y * gap;
           var wave = Math.sin((px * 0.012) + (py * 0.016) - t * 1.7);
           var a = (wave + 1) / 2;                   // 0..1
-          var r = 1 + a * 2.1;
-          if (a > 0.82) {
-            ctx.fillStyle = 'rgba(255,176,32,' + (a * 0.9) + ')';
+          var r = 0.9 + a * 1.5;
+          if (a > 0.88) {
+            ctx.fillStyle = 'rgba(34,224,200,' + (a * 0.85) + ')';
           } else {
-            ctx.fillStyle = 'rgba(11,74,143,' + (0.18 + a * 0.62) + ')';
+            ctx.fillStyle = 'rgba(47,111,208,' + (0.12 + a * 0.44) + ')';
           }
           ctx.beginPath();
           ctx.arc(px, py, r, 0, Math.PI * 2);

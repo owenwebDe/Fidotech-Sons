@@ -41,7 +41,7 @@ async function init() {
 
   const scene = new THREE.Scene();
   // the page ground colour, so the far edge of the field dissolves into the paper
-  scene.fog = new THREE.Fog(0xF0F1EE, small ? 14 : 17, small ? 30 : 36);
+  scene.fog = new THREE.Fog(0x0A1018, small ? 20 : 24, small ? 42 : 52);
 
   const camera = new THREE.PerspectiveCamera(small ? 40 : 34, 1, 0.1, 140);
   const camBase = new THREE.Vector3(0, small ? 6.2 : 5.4, small ? 17 : 20);
@@ -72,24 +72,24 @@ async function init() {
   renderer.setClearColor(0x000000, 0);
 
   /* ---------- lights ---------- */
-  scene.add(new THREE.HemisphereLight(0xffffff, 0xd8d2c6, 1.15));
-  const key = new THREE.DirectionalLight(0xfff4e2, 1.5);
+  scene.add(new THREE.HemisphereLight(0xDCEBFF, 0x0E1A26, 0.7));
+  const key = new THREE.DirectionalLight(0xFFF2DC, 2.1);
   key.position.set(-6, 10, 6);
   scene.add(key);
-  const rim = new THREE.DirectionalLight(0xFFCB85, 0.55);
+  const rim = new THREE.DirectionalLight(0x6FE3D5, 0.9);
   rim.position.set(7, 4, -6);
   scene.add(rim);
 
   /* ---------- the cell field ---------- */
   const geo = new THREE.BoxGeometry(0.78, 0.1, 0.78);
-  const mat = new THREE.MeshStandardMaterial({ roughness: 0.42, metalness: 0.22 });
+  const mat = new THREE.MeshStandardMaterial({ roughness: 0.3, metalness: 0.5 });
   const mesh = new THREE.InstancedMesh(geo, mat, COUNT);
   mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
 
-  const colPanel = new THREE.Color('#111A24');   // unlit cell
-  const colDeep  = new THREE.Color('#073565');   // current arriving
-  const colBrand = new THREE.Color('#0B4A8F');   // conducting
-  const colAccent = new THREE.Color('#FFB020');   // crest
+  const colPanel = new THREE.Color('#263749');   // unlit cell
+  const colDeep  = new THREE.Color('#1A62AE');   // current arriving
+  const colBrand = new THREE.Color('#3E86DE');   // conducting
+  const colAccent = new THREE.Color('#5FEADA');   // crest
 
   const dummy = new THREE.Object3D();
   const col = new THREE.Color();
