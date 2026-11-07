@@ -57,7 +57,7 @@ Two rules hold this together and are worth keeping if you edit it:
 2. **The navy never carries small text.** At 4:1 on this ground it is a graphic
    colour. Anything the eye has to read at 12–14px uses cyan, which is 11.7:1.
    For the same reason the primary button takes black text, not white — white on
-   cyan is 1.5:1 and unreadable.
+   cyan is 1.7:1 and unreadable.
 
 The primary button has a specular sweep that crosses its face on hover; the hero
 button and the phone action bar also run it on their own every eight seconds.
